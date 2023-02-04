@@ -38,5 +38,27 @@ a:hover {
 
 ul {
     color:rgb(113, 141, 66);
+    list-style: none;
 }
 
+li {
+    background-color: white;
+    border-radius: 30px;
+    padding: 10px;
+    margin: 10px;
+    font-weight: bold;
+    border: 1px solid;
+    border-color: green;
+}
+
+li:hover {
+    background-color: rgb(193, 228, 121);
+}
+
+#progress {
+    background-color: rgb(246, 246, 173);
+}
+
+#progress:hover {
+    background-color: rgb(193, 228, 121);
+}
