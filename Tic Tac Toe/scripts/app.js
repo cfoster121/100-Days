@@ -1,4 +1,11 @@
-let editedPlayer = 0
+let editedPlayer = 0;
+let activePlayer = 0;
+
+const gameData = [
+    [0, 0, 0],
+    [0, 0, 0],
+    [0, 0, 0]
+]
 
 const players = [
     {
@@ -11,19 +18,30 @@ const players = [
     }
 ]
 
-const configOverlay = document.getElementById('config-overlay')
-const backdrop = document.getElementById('backdrop')
-const form = document.querySelector('form')
-const errorOutput = document.getElementById('config-error')
+const configOverlay = document.getElementById('config-overlay');
+const backdrop = document.getElementById('backdrop');
+const form = document.querySelector('form');
+const errorOutput = document.getElementById('config-error');
+const gameArea = document.getElementById('active-game');
+const nameError = document.getElementById('name-error');
+const activePlayerName = document.getElementById('active-player-name');
 
-const editPlayer1 = document.getElementById('edit-player-1')
-const editPlayer2 = document.getElementById('edit-player-2')
-const cancelConfig = document.getElementById('cancel-config')
+const editPlayer1 = document.getElementById('edit-player-1');
+const editPlayer2 = document.getElementById('edit-player-2');
+const cancelConfig = document.getElementById('cancel-config');
+const startGame = document.getElementById('start-game');
+const gameFieldElements = document.querySelectorAll('#game-board li');
 
-editPlayer1.addEventListener('click', openPlayerConfig)
-editPlayer2.addEventListener('click', openPlayerConfig)
+editPlayer1.addEventListener('click', openPlayerConfig);
+editPlayer2.addEventListener('click', openPlayerConfig);
 
-cancelConfig.addEventListener('click', closePlayerConfig)
-backdrop.addEventListener('click', closePlayerConfig)
+cancelConfig.addEventListener('click', closePlayerConfig);
+backdrop.addEventListener('click', closePlayerConfig);
 
-form.addEventListener('submit', savePlayerConfig)
+form.addEventListener('submit', savePlayerConfig);
+
+startGame.addEventListener('click', startNewGame);
+
+for(const element of gameFieldElements) {
+    element.addEventListener('click', selectGameField)
+}
