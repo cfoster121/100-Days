@@ -26,6 +26,8 @@ const errorOutput = document.getElementById('config-error');
 const gameArea = document.getElementById('active-game');
 const nameError = document.getElementById('name-error');
 const activePlayerName = document.getElementById('active-player-name');
+const gameOver = document.getElementById('game-end');
+const gameWinner = document.getElementById('winning-player');
 
 const editPlayer1 = document.getElementById('edit-player-1');
 const editPlayer2 = document.getElementById('edit-player-2');
